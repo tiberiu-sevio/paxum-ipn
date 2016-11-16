@@ -1,6 +1,6 @@
 <?php
 // You can get that info by accessing you account at Merchand Services -> IPN Settings -> Generate New Shared Secret
-define("IPN_SHARED_KEY","74db120f0a8e5646ef5a30154e9f6deb");
+define("IPN_SHARED_KEY","YOUR_SHARED_KEY_HERE");
 
 $rawPostedData = file_get_contents('php://input');
 
