@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paxum Payment Form</title>
+    <style>
+        label{
+            display: block;
+            padding: 5px 0;
+        }
+        input{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<form id="redirect-payment" action="https://www.paxum.com/payment/phrame.php?action=displayProcessPaymentLogin" method="post">
+    <!-- Your Paxum Business Email Address -->
+    <input type="hidden" name="button_type_id" value="1" />
+    <label> Your Business Email
+    <input type="text" name="business_email" value="pay@seviosolutions.com" />
+    </label>
+    <!-- can be retrieved from the IPN POST -->
+    <label> The item ID
+        <input type="text" name="item_id" value="ITEM ID" />
+    </label>
+    <!-- Can be retrieved from the IPN POST -->
+    <label> The item name
+        <input type="text" name="item_name" value="ITEM NAME" />
+    </label>
+    <!-- Can be retrieved from the IPN POST -->
+    <label> Currency Code
+        <input type="text" name="currency" value="USD" />
+    </label>
+    </label>
+    <!-- Customers will be redirected to that url if they choose not to pay anymore. -->
+    <label> Cancel Url, where do your customer return if they cancel the transaction.
+        <input type="text" name="cancel_url" value="http://example.com/cancel-url/" />
+    </label>
+    <!-- Customers will be redirected to that url after they make the payment. -->
+    <label> Cancel Url, where do your customer return after making the payment
+        <input type="text" name="finish_url" value="http://example.com/payment-complete/" />
+    </label>
+    <!-- Can be retrieved from the IPN POST -->
+    <label> The url to your IPN location + a reference variable
+    <input type="text" name="variables" value="notify_url=http://example.com/paxum/ipn.php&reference=YOUR_REFERRENCE" />
+    </label>
+    <!-- Can be retrieved from the IPN POST -->
+    <label> Amount you are willing to pay
+        <input type="number" class="form-control" name="amount" value="10" />
+    </label>
+    <button type="submit" class="btn btn-success">Proceed to payment</button>
+</form>
+</body>
+</html>
